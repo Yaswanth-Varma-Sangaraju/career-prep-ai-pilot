@@ -1,18 +1,17 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Briefcase, BarChart2, Users, ArrowRight } from "lucide-react";
+import { Briefcase, BarChart2, Users, ArrowRight, Brain, Target, Zap } from "lucide-react";
 
 export default function Index() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] gap-12 px-4">
       <div className="max-w-2xl text-center space-y-8">
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight">
-          Welcome to <span className="text-indigo-600 dark:text-indigo-400">MyCorpPro</span>
+          Welcome to <span className="text-indigo-600 dark:text-indigo-400">AceInterview AI</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed">
-          Elevate your career journey with AI-powered tools, insights, and a professional platform tailored for success.
+          Master your interview skills with AI-powered practice, real-time feedback, and personalized coaching tailored for your success.
         </p>
         <Button asChild size="lg" className="mt-8 px-8 py-3 text-lg font-medium">
           <Link to="/dashboard">
@@ -24,19 +23,19 @@ export default function Index() {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
         <FeatureCard
-          icon={<Briefcase className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />}
-          title="Smart Job Search"
-          text="Discover jobs matched by skill, experience, & goals using our state-of-the-art AI."
+          icon={<Brain className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />}
+          title="AI Interview Practice"
+          text="Practice with advanced AI interviewers that adapt to your experience level and provide real-time feedback."
         />
         <FeatureCard
-          icon={<BarChart2 className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />}
-          title="Advanced Analytics"
-          text="Track your application success, interview performance, and progress over time."
+          icon={<Target className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />}
+          title="Performance Analytics"
+          text="Track your progress with detailed analytics, identify weak areas, and monitor improvement over time."
         />
         <FeatureCard
-          icon={<Users className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />}
-          title="Career Community"
-          text="Connect with top professionals, mentors, and company insiders."
+          icon={<Zap className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />}
+          title="Career Acceleration"
+          text="Get personalized roadmaps, resume optimization, and company-specific interview preparation."
         />
       </div>
     </div>

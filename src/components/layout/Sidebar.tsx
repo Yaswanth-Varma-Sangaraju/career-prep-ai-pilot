@@ -1,4 +1,3 @@
-
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
@@ -66,16 +65,6 @@ const Sidebar: React.FC = () => {
         </ul>
       </nav>
       <div className="flex flex-col mb-4 mt-auto items-center px-2">
-        <a
-          href="https://lovable.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`w-full rounded-md bg-secondary hover:bg-accent text-primary px-3 py-2 text-xs mb-2 mt-auto transition-all text-center font-medium ${
-            collapsed ? "hidden" : ""
-          }`}
-        >
-          Powered by Lovable
-        </a>
         <div className="text-xs text-muted-foreground mt-2 select-none">
           {!collapsed && <>v1.0</>}
         </div>
