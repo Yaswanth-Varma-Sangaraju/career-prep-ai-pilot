@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -114,21 +113,21 @@ const QuestionCategories: React.FC<QuestionCategoriesProps> = ({
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Beginner':
-        return 'bg-green-500/20 text-green-400';
+        return 'bg-green-500/20 text-green-600';
       case 'Intermediate':
-        return 'bg-yellow-500/20 text-yellow-400';
+        return 'bg-yellow-500/20 text-yellow-600';
       case 'Advanced':
-        return 'bg-red-500/20 text-red-400';
+        return 'bg-red-500/20 text-red-600';
       default:
-        return 'bg-gray-500/20 text-gray-400';
+        return 'bg-gray-500/20 text-gray-600';
     }
   };
 
   return (
     <div className="space-y-4">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-white mb-2">Select Interview Category</h2>
-        <p className="text-gray-400">Choose the type of questions you want to practice</p>
+        <h2 className="text-2xl font-bold text-foreground mb-2">Select Interview Category</h2>
+        <p className="text-muted-foreground">Choose the type of questions you want to practice</p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -137,8 +136,8 @@ const QuestionCategories: React.FC<QuestionCategoriesProps> = ({
             key={category.id}
             className={`cursor-pointer transition-all duration-300 p-6 ${
               selectedCategory === category.id
-                ? 'border-purple-500 bg-purple-500/20 scale-105'
-                : 'bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/15 hover:scale-102'
+                ? 'border-primary bg-primary/10 scale-105'
+                : 'bg-card border-border hover:bg-accent/10 hover:scale-102'
             }`}
             onClick={() => onCategorySelect(category.id)}
           >
@@ -151,19 +150,19 @@ const QuestionCategories: React.FC<QuestionCategoriesProps> = ({
               </Badge>
             </div>
 
-            <h3 className="text-white font-semibold text-lg mb-2">{category.name}</h3>
-            <p className="text-gray-300 text-sm mb-4">{category.description}</p>
+            <h3 className="text-foreground font-semibold text-lg mb-2">{category.name}</h3>
+            <p className="text-muted-foreground text-sm mb-4">{category.description}</p>
 
             <div className="flex items-center justify-between mb-4">
-              <span className="text-cyan-400 font-medium">{category.questionCount} questions</span>
+              <span className="text-primary font-medium">{category.questionCount} questions</span>
             </div>
 
-            <div className="border-t border-white/20 pt-4">
-              <div className="text-gray-400 text-xs mb-2">Example questions:</div>
+            <div className="border-t border-border pt-4">
+              <div className="text-muted-foreground text-xs mb-2">Example questions:</div>
               <ul className="space-y-1">
                 {category.examples.slice(0, 2).map((example, index) => (
-                  <li key={index} className="text-gray-300 text-xs flex items-start">
-                    <span className="text-cyan-400 mr-2">•</span>
+                  <li key={index} className="text-muted-foreground text-xs flex items-start">
+                    <span className="text-primary mr-2">•</span>
                     <span className="line-clamp-1">{example}</span>
                   </li>
                 ))}

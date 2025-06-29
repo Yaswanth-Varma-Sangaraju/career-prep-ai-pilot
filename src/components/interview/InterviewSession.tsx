@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -49,7 +48,7 @@ const InterviewSession: React.FC<InterviewSessionProps> = ({
     <div className="space-y-6">
       {/* Progress and Live Metrics */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <Card className="lg:col-span-2 bg-white/10 backdrop-blur-lg border-white/20 dark:bg-white/10 dark:border-white/20 bg-white border-gray-200 p-6">
+        <Card className="lg:col-span-2 bg-card border-border p-6">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="text-lg font-semibold text-foreground">
@@ -68,30 +67,30 @@ const InterviewSession: React.FC<InterviewSessionProps> = ({
           <Progress value={(timeLeft / 120) * 100} className="h-2" />
         </Card>
 
-        <Card className="bg-white/10 backdrop-blur-lg border-white/20 dark:bg-white/10 dark:border-white/20 bg-white border-gray-200 p-6">
+        <Card className="bg-card border-border p-6">
           <div className="flex items-center space-x-2 mb-4">
-            <Brain className="w-4 h-4 text-cyan-400" />
+            <Brain className="w-4 h-4 text-primary" />
             <h4 className="text-foreground font-semibold">Live AI Metrics</h4>
           </div>
           <div className="space-y-4">
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-muted-foreground text-sm">Confidence</span>
-                <span className="text-cyan-400 font-semibold">{Math.round(liveConfidence)}%</span>
+                <span className="text-primary font-semibold">{Math.round(liveConfidence)}%</span>
               </div>
               <Progress value={liveConfidence} className="h-2" />
             </div>
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-muted-foreground text-sm">Eye Contact</span>
-                <span className="text-green-400 font-semibold">{Math.round(eyeContactScore)}%</span>
+                <span className="text-green-600 font-semibold">{Math.round(eyeContactScore)}%</span>
               </div>
               <Progress value={eyeContactScore} className="h-2" />
             </div>
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-muted-foreground text-sm">Speech Clarity</span>
-                <span className="text-yellow-400 font-semibold">{Math.round(speechClarityScore)}%</span>
+                <span className="text-yellow-600 font-semibold">{Math.round(speechClarityScore)}%</span>
               </div>
               <Progress value={speechClarityScore} className="h-2" />
             </div>
@@ -100,9 +99,9 @@ const InterviewSession: React.FC<InterviewSessionProps> = ({
       </div>
 
       {/* Current Question */}
-      <Card className="bg-white/10 backdrop-blur-lg border-white/20 dark:bg-white/10 dark:border-white/20 bg-white border-gray-200 p-8">
+      <Card className="bg-card border-border p-8">
         <div className="mb-6">
-          <Badge className="mb-4 bg-blue-500/20 text-blue-400">
+          <Badge className="mb-4 bg-primary/20 text-primary">
             {questions[currentQuestionIndex]?.type}
           </Badge>
           <h2 className="text-xl font-semibold text-foreground mb-4">
@@ -121,13 +120,13 @@ const InterviewSession: React.FC<InterviewSessionProps> = ({
               className={`w-20 h-20 rounded-full border-4 transition-all ${
                 isRecording
                   ? 'border-red-500 bg-red-500/20 animate-pulse'
-                  : 'border-purple-500 bg-purple-500/20 hover:bg-purple-500/30'
+                  : 'border-primary bg-primary/20 hover:bg-primary/30'
               }`}
             >
               {isRecording ? (
-                <MicOff className="w-8 h-8 text-red-400 mx-auto" />
+                <MicOff className="w-8 h-8 text-red-500 mx-auto" />
               ) : (
-                <Mic className="w-8 h-8 text-purple-400 mx-auto" />
+                <Mic className="w-8 h-8 text-primary mx-auto" />
               )}
             </button>
           </div>
@@ -142,7 +141,7 @@ const InterviewSession: React.FC<InterviewSessionProps> = ({
                 {[1, 2, 3, 4, 5].map(i => (
                   <div
                     key={i}
-                    className="w-2 h-8 bg-purple-500 rounded animate-pulse"
+                    className="w-2 h-8 bg-primary rounded animate-pulse"
                     style={{ animationDelay: `${i * 0.1}s` }}
                   />
                 ))}

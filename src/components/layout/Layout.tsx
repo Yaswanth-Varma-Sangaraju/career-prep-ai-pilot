@@ -28,7 +28,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="flex-1 flex flex-col min-h-screen bg-background transition-main">
         {/* Header */}
         <header className="flex items-center justify-between px-8 h-16 border-b border-border bg-card shadow-soft transition-main">
-          <div className="text-xl font-bold tracking-tight text-primary select-none transition-main">
+          <div className="text-xl font-bold tracking-tight text-foreground select-none transition-main">
             AceInterview AI
           </div>
           <div>
@@ -37,7 +37,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               size="icon"
               aria-label="Toggle theme"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-full hover:bg-accent/10 transition-colors"
+              className="rounded-full hover:bg-accent/10 transition-colors text-foreground"
             >
               {theme === "dark" ? (
                 <Sun className="w-5 h-5 text-yellow-500 transition-main" />
@@ -47,7 +47,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </Button>
           </div>
         </header>
-        <main className="p-8 flex-1 flex flex-col animate-fade-in transition-main bg-secondary/30">{children}</main>
+        <main className="p-8 flex-1 flex flex-col animate-fade-in transition-main bg-secondary/30 text-foreground">{children}</main>
       </div>
     </div>
   );

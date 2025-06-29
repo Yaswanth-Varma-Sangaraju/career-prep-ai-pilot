@@ -56,10 +56,15 @@ export default {
 					DEFAULT: "#ffffff", // Pure white background
 					dark: "#0f172a",    // Rich dark slate for dark mode
 				},
+				foreground: {
+					DEFAULT: "#1e293b", // Dark text for light mode
+					dark: "#f8fafc",    // Light text for dark mode
+				},
 				sidebar: {
 					DEFAULT: "#1e293b", // Modern slate for sidebar
 					foreground: "#ffffff",
 					border: "#334155",
+					accent: "#334155",
 				},
 				accent: {
 					DEFAULT: "#06b6d4", // Modern cyan accent

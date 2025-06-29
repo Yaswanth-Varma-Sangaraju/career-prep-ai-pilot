@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -78,7 +77,7 @@ const InterviewSetup: React.FC<InterviewSetupProps> = ({
       />
 
       {selectedCategory && (
-        <Card className="bg-white/10 backdrop-blur-lg border-white/20 dark:bg-white/10 dark:border-white/20 bg-white border-gray-200 p-8">
+        <Card className="bg-card border-border p-8">
           <h2 className="text-2xl font-bold text-foreground mb-6">Choose Your AI Interviewer</h2>
           
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -88,8 +87,8 @@ const InterviewSetup: React.FC<InterviewSetupProps> = ({
                 onClick={() => onPersonalitySelect(personality.id)}
                 className={`p-6 rounded-lg border-2 transition-all text-left ${
                   selectedPersonality === personality.id
-                    ? 'border-purple-500 bg-purple-500/20'
-                    : 'border-white/20 bg-white/5 hover:bg-white/10 dark:border-white/20 dark:bg-white/5 dark:hover:bg-white/10 border-gray-200 bg-gray-50 hover:bg-gray-100'
+                    ? 'border-primary bg-primary/10'
+                    : 'border-border bg-card hover:bg-accent/10'
                 }`}
               >
                 <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${personality.color} flex items-center justify-center text-white mb-4`}>
@@ -99,7 +98,7 @@ const InterviewSetup: React.FC<InterviewSetupProps> = ({
                 <p className="text-muted-foreground text-sm mb-3">{personality.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {personality.traits.map(trait => (
-                    <Badge key={trait} variant="outline" className="border-gray-500 text-muted-foreground text-xs">
+                    <Badge key={trait} variant="outline" className="border-muted-foreground/30 text-muted-foreground text-xs">
                       {trait}
                     </Badge>
                   ))}
@@ -111,7 +110,7 @@ const InterviewSetup: React.FC<InterviewSetupProps> = ({
           <Button
             onClick={onStartInterview}
             disabled={!selectedCategory || !selectedPersonality}
-            className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600"
+            className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
           >
             Start AI Interview
           </Button>
